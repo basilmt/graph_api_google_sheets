@@ -62,8 +62,8 @@ function draw_tables(elm, json_res, gql) {
     elm.appendChild(container)
 }
 
-function preview(elm, url,gql) {
-	fetch(url)
+async function preview(elm, url,gql) {
+	await fetch(url)
 		.then(data => data.text())
 		.then(function(response) {
 			var responseText = response.substring(response.indexOf("(") + 1, response.lastIndexOf(")"));
@@ -85,12 +85,12 @@ var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
 
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
-preview(previewElement, url, gql);
+await preview(previewElement, url, gql);
 sep(previewElement)
 
 var gql = "SELECT A, C, D";
 var url = CreateUrl(gsKey, gql);
-preview(previewElement, url, gql);
+await preview(previewElement, url, gql);
 sep(previewElement)
 
 
