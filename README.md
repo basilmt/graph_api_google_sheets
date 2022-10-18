@@ -15,3 +15,8 @@
 6. Add required gquery. learn more about [query language](https://developers.google.com/chart/interactive/docs/querylanguage#overview)
 7. You can't use table headers to query, you have to use Column Name(eg: A,B,C like that)
 
+
+
+### For adding data to ggogle sheet
+1. [Google Forms](https://docs.google.com/forms)
+2. [Appsheet by Google](https://www.appsheet.com)
