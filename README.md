@@ -17,6 +17,6 @@
 
 
 
-### For adding data to ggogle sheet
+### For adding data to google sheet
 1. [Google Forms](https://docs.google.com/forms)
 2. [Appsheet by Google](https://www.appsheet.com)
