@@ -20,10 +20,19 @@ function Request(url, responseFunction) {
 	xmlhttp.send();
 }
 
-function draw_tables(elm, json_res) {
+function draw_tables(elm, json_res, gql) {
+    container = document.createElement('div');
+    gql_text = document.createElement('div');
+    gql_text.innerHTML = gql;
+    container.appendChild(gql_text);
 	if(json_res.status !== "ok"){
+        err_text = document.createElement('div');
+        err_text.innerHTML = "Something Went Wrong";
+        container.appendChild(err_text);
+        elm.appendChild(container)
 		return
 	}
+
     table = json_res.table
 	
 	tbl = document.createElement('table');
@@ -49,17 +58,18 @@ function draw_tables(elm, json_res) {
         }   
 		tbl.appendChild(row)
     }
-	elm.appendChild(tbl)
+	container.appendChild(tbl)
+    elm.appendChild(container)
 }
 
-function preview(elm, url) {
+function preview(elm, url,gql) {
 	fetch(url)
 		.then(data => data.text())
 		.then(function(response) {
 			var responseText = response.substring(response.indexOf("(") + 1, response.lastIndexOf(")"));
 			var response = JSON.parse(responseText);
             console.log(JSON.stringify(response, null, 2));
-			draw_tables(elm, response);
+			draw_tables(elm, response, gql);
 		})
 }
 
@@ -67,4 +77,5 @@ var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
 var previewElement = document.getElementById('preview');
-preview(previewElement, url);
+preview(previewElement, url, gql);
+
