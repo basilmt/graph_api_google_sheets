@@ -60,7 +60,7 @@ function draw_tables(elm, json_res, gql) {
     }
 	container.appendChild(tbl)
     elm.appendChild(container)
-    ele.appendChild(document.createElement('hr'));
+    elm.appendChild(document.createElement('hr'));
 }
 
 function preview(elm, url,gql) {
@@ -84,6 +84,26 @@ var url = CreateUrl(gsKey, gql);
 preview(previewElement, url, gql);
 
 var gql = "SELECT A, C, D";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+
+var gql = "SELECT A, C, D Where D = 'Female'";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+
+var gql = "SELECT A, C, D Where C <= 25";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+
+var gql = "SELECT avg(C), D group by D";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+
+var gql = "SELECT A, D order by A limit 5";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+
+var gql = "SELECT A, D order by A limit 5 offset 7";
 var url = CreateUrl(gsKey, gql);
 preview(previewElement, url, gql);
 
