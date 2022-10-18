@@ -73,9 +73,25 @@ function preview(elm, url,gql) {
 		})
 }
 
+function sep(ele){
+    ele.appendChild(document.createElement('br'));
+    ele.appendChild(document.createElement('hr'));
+    ele.appendChild(document.createElement('br'));
+}
+
+var previewElement = document.getElementById('preview');
 var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
+
+
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
-var previewElement = document.getElementById('preview');
 preview(previewElement, url, gql);
+sep(previewElement)
+
+var gql = "SELECT A, C, D";
+var url = CreateUrl(gsKey, gql);
+preview(previewElement, url, gql);
+sep(previewElement)
+
+
 
