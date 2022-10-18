@@ -60,10 +60,11 @@ function draw_tables(elm, json_res, gql) {
     }
 	container.appendChild(tbl)
     elm.appendChild(container)
+    ele.appendChild(document.createElement('hr'));
 }
 
-async function preview(elm, url,gql) {
-	await fetch(url)
+function preview(elm, url,gql) {
+	fetch(url)
 		.then(data => data.text())
 		.then(function(response) {
 			var responseText = response.substring(response.indexOf("(") + 1, response.lastIndexOf(")"));
@@ -73,11 +74,6 @@ async function preview(elm, url,gql) {
 		})
 }
 
-function sep(ele){
-    ele.appendChild(document.createElement('br'));
-    ele.appendChild(document.createElement('hr'));
-    ele.appendChild(document.createElement('br'));
-}
 
 var previewElement = document.getElementById('preview');
 var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
@@ -86,12 +82,10 @@ var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
 preview(previewElement, url, gql);
-sep(previewElement)
 
 var gql = "SELECT A, C, D";
 var url = CreateUrl(gsKey, gql);
 preview(previewElement, url, gql);
-sep(previewElement)
 
 
 
