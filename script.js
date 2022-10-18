@@ -42,7 +42,7 @@ function draw_tables(elm, json_res, gql) {
     table = json_res.table
 	
 	tbl = document.createElement('table');
-    if(json_res.table.parsedNumHeaders != 0){
+    if(json_res.table.cols){
 		// draw headers
 		row = document.createElement('tr');
         for (let i = 0; i < table.cols.length; i++) {
