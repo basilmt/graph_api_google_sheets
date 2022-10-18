@@ -1,11 +1,12 @@
 function CreateUrl(key, gql, sheet_name) {
 	var gq = gql;
 	var encodedgg = encodeURIComponent(gq);
+    var url;
 	if (sheet_name){
-	var url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?sheet=' + sheet_name +'&tq=' + encodedgg;
+	url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?sheet=' + sheet_name +'&tq=' + encodedgg;
     }
     else{
-    var url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?tq=' + encodedgg;
+    url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?tq=' + encodedgg;
     }
 	return url;
 }
