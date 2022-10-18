@@ -1,9 +1,12 @@
-function CreateUrl(key, gql) {
+function CreateUrl(key, gql, sheet_name) {
 	var gq = gql;
 	var encodedgg = encodeURIComponent(gq);
-	// If you want from a particular sheet use this one
-	// var url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?sheet=Sheet2&tq=' + encodedgg;
+	if (sheet_name){
+	var url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?sheet=' + sheet_name +'&tq=' + encodedgg;
+    }
+    else{
     var url = 'https://docs.google.com/spreadsheets/d/' + key + '/gviz/tq?tq=' + encodedgg;
+    }
 	return url;
 }
 
@@ -77,7 +80,7 @@ function preview(elm, url,gql) {
 
 var previewElement = document.getElementById('preview');
 var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
-
+var sheet_name = null
 
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
