@@ -11,6 +11,7 @@ function CreateUrl(key, gql, sheet_name) {
 	return url;
 }
 
+
 function Request(url, responseFunction) {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
@@ -23,6 +24,7 @@ function Request(url, responseFunction) {
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
 }
+
 
 function draw_tables(elm, json_res, gql) {
     container = document.createElement('div');
@@ -66,6 +68,7 @@ function draw_tables(elm, json_res, gql) {
     elm.appendChild(container)
     elm.appendChild(document.createElement('hr'));
 }
+
 
 function preview(elm, url,gql) {
 	fetch(url)
