@@ -85,12 +85,12 @@ var gsKey = '18XF7jOBaUOMoN5KuTi5NNzq-HgAV-7Rmt1-V3H674HA';
 
 var gql = "SELECT *";
 var url = CreateUrl(gsKey, gql);
-await preview(previewElement, url, gql);
+preview(previewElement, url, gql);
 sep(previewElement)
 
 var gql = "SELECT A, C, D";
 var url = CreateUrl(gsKey, gql);
-await preview(previewElement, url, gql);
+preview(previewElement, url, gql);
 sep(previewElement)
 
 
